@@ -1,0 +1,22 @@
+<configuration>
+    <!-- Configuración de los logs de la consola -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuración de los logs en un archivo -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/application.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Asignación de los logs a los appenders -->
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
